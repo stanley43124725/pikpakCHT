@@ -50,7 +50,7 @@
                   <logout></logout>
                 </n-icon>
               </template>
-              退出登錄
+              登出
             </n-tooltip>
           </div>
         </div>
@@ -203,7 +203,7 @@ import { useRoute, useRouter } from 'vue-router'
   const logoutPost = () => {
     dialog.warning({
         title: '警告',
-        content: '確定退出？',
+        content: '確定登出？',
         positiveText: '確定',
         negativeText: '不確定',
         onPositiveClick: () => {
@@ -211,7 +211,7 @@ import { useRoute, useRouter } from 'vue-router'
             .then(res => {
               window.localStorage.removeItem('pikpakLogin')
               window.localStorage.removeItem('pikpakLoginData')
-              window.$message.success('退出成功')
+              window.$message.success('登出成功')
               router.push('/login')
             })
             .catch(error => {
