@@ -121,11 +121,11 @@ import { useRoute, useRouter } from 'vue-router'
       key: 'invited',
       icon: renderIcon(Copy)
     },
-    // {
-    //   label: '資源庫',
-    //   key: 'share',
-    //   icon: renderIcon(Share)
-    // },
+    {
+       label: '資源庫',
+       key: 'share',
+       icon: renderIcon(Share)
+    },
     {
       label: '設置',
       key: 'setting',
