@@ -11,19 +11,19 @@
       <div class="login-box">
         <n-form label-align="left" style="padding-top: 30px;" :model="loginData" :rules="rules" ref="formRef" label-placement="left" label-width="0" class="login-form">
           <n-form-item path="email">
-            <n-input v-model:value="loginData.phone_number" placeholder="請輸入區號加手機號碼如+8615113254562"></n-input>
+            <n-input v-model:value="loginData.phone_number" placeholder="請輸入區號加手機號碼如+886987654321"></n-input>
           </n-form-item>
           <n-form-item path="verification_code">
             <n-input-group>
               <n-input v-model:value="loginData.verification_code" placeholder="請輸入驗證碼"></n-input>
-              <n-button @click="sendCode" :disabled="time < 60" :loading="codeLoading">{{ time >= 60 ? '發送驗證碼' : ('重新髮送 ' + time + 's')}}</n-button>
+              <n-button @click="sendCode" :disabled="time < 60" :loading="codeLoading">{{ time >= 60 ? '發送驗證碼' : ('重新發送 ' + time + 's')}}</n-button>
             </n-input-group>
           </n-form-item>
           <!-- <n-form-item label="" v-if="!isUser">
-            <n-checkbox v-model:checked="invite">接受邀請獲得10天vip</n-checkbox>
+            
           </n-form-item> -->
           <n-form-item>
-            <n-button type="primary" class="block" :loading="loading" @click="register">登錄</n-button>
+            <n-button type="primary" class="block" :loading="loading" @click="register">登入</n-button>
           </n-form-item>
         </n-form>
         <div class="login-other">
@@ -36,7 +36,7 @@
                   </n-icon>
                 </router-link>
               </template>
-              信箱登陸
+              信箱登入
             </n-tooltip>
             <n-tooltip >
               <template #trigger>
@@ -44,7 +44,7 @@
                   <brand-google></brand-google>
                 </n-icon>
               </template>
-              APP內Google登錄的帳號請先通過忘記密碼設置密碼後登錄
+              APP內Google登入的帳號請先通過忘記密碼設置密碼後登入
             </n-tooltip>
           </n-space>
         </div>
@@ -186,7 +186,7 @@ const register = (e:Event) => {
                 vipInvite(res.data)
                 window.localStorage.setItem('pikpakLogin', JSON.stringify(res.data))
                 window.localStorage.removeItem('pikpakLoginData')
-                message.success('登錄成功')
+                message.success('登入成功')
                 router.push('/')
               })
               .catch((err:any) => {
