@@ -16,7 +16,7 @@
           <n-form-item path="verification_code">
             <n-input-group>
               <n-input v-model:value="loginData.verification_code" placeholder="請輸入驗證碼"></n-input>
-              <n-button @click="sendCode" :disabled="time < 60" :loading="codeLoading">{{ time >= 60 ? '發送驗證碼' : ('重新髮送 ' + time + 's')}}</n-button>
+              <n-button @click="sendCode" :disabled="time < 60" :loading="codeLoading">{{ time >= 60 ? '發送驗證碼' : ('重新發送 ' + time + 's')}}</n-button>
             </n-input-group>
           </n-form-item>
           <n-form-item path="name">
@@ -29,13 +29,13 @@
             <n-input  :disabled="!loginData.password" v-model:value="loginData.password1" placeholder="請再次輸入密碼" @keyup.enter="register" type="password" show-password-on="mousedown"></n-input>
           </n-form-item>
           <!-- <n-form-item label="">
-            <n-checkbox v-model:checked="invite">接受邀請獲得10天vip</n-checkbox>
+            
           </n-form-item> -->
           <n-form-item>
             <n-button type="primary" class="block" :loading="loading" @click="register">註冊</n-button>
           </n-form-item>
           <n-form-item label="">
-            <router-link to="/login" class="forget-password">已有帳號？點擊登錄</router-link>
+            <router-link to="/login" class="forget-password">已有帳號？點擊登入</router-link>
           </n-form-item>
         </n-form>
         <n-tooltip >
@@ -44,7 +44,7 @@
               <brand-google></brand-google>
             </n-icon>
           </template>
-          APP內Google登錄的帳號請先通過忘記密碼設置密碼後登錄
+          APP內Google登入的帳號請先通過忘記密碼設置密碼後登入
         </n-tooltip>
       </div>
     </div>
