@@ -122,7 +122,7 @@ const getApk = () => {
 
 <style >
   .login-page {
-    background-color: #306eff;
+    background-color: #e1eeff;
      box-sizing: border-box;
     min-height: 100vh;
     width: 100%;
