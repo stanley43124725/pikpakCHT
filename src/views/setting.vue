@@ -36,8 +36,8 @@
           </n-form-item>
         </n-form>
       </n-collapse-item>
-      <n-collapse-item name="1" title="自動登錄設置">
-        <template #header>自動登錄設置   <a @click.stop="" href="https://www.tjsky.net/?p=220#i-6" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#d03050"><zoom-question></zoom-question></n-icon> </a></template>
+      <n-collapse-item name="1" title="自動登入設置">
+        <template #header>自動登入設置   <a @click.stop="" href="https://www.tjsky.net/?p=220#i-6" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#d03050"><zoom-question></zoom-question></n-icon> </a></template>
         <n-form label-width="100px" label-align="left" label-placement="left">
           <n-form-item label="是否開啟">
             <n-switch v-model:value="loginSwitch"></n-switch>
@@ -139,9 +139,9 @@ const loginPost = () => {
   if(loginSwitch.value) {
     dialog.warning({
       title: '警告',
-      content: '記住登陸是指瀏覽器本地明文保存使用者名稱密碼用於下次自動登陸，請勿在非信任設備選擇',
+      content: '記住登入是指瀏覽器本地明文保存使用者名稱密碼用於下次自動登入，請勿在非信任設備選擇',
       positiveText: '確定',
-      negativeText: '不確定',
+      negativeText: '取消',
       onPositiveClick: () => {
         window.localStorage.setItem('pikpakLoginData', JSON.stringify(loginData.value))
       },
@@ -185,7 +185,7 @@ const telegramUrl = ref()
 const goTelegram = () => {
   let login = JSON.parse(window.localStorage.getItem('pikpakLogin') || '{}')
   if(!login && !login.access_token) {
-    window.$message.error('請先登陸')
+    window.$message.error('請先登入')
     return false
   }
   
