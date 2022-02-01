@@ -17,15 +17,15 @@
             <n-input v-model:value="loginData.password" placeholder="請輸入密碼" @keyup.enter="loginPost" type="password" show-password-on="mousedown"></n-input>
           </n-form-item>
           <n-form-item label="">
-            <n-checkbox v-model:checked="remember" @update:checked="showMessage">記住登陸</n-checkbox>
+            <n-checkbox v-model:checked="remember" @update:checked="showMessage">自動登入</n-checkbox>
           </n-form-item>
           <n-form-item>
-            <n-button type="primary" class="block" :loading="loading" @click="loginPost">登陸</n-button>
+            <n-button type="primary" class="block" :loading="loading" @click="loginPost">登入</n-button>
           </n-form-item>
           <n-form-item label="">
             <a target="_blank" href="https://i.mypikpak.com/v1/file/center/account/v1/password/?type=forget_password&locale=zh-cn" class="forget-password">忘記密碼</a>
             <router-link to="/register" class="register">註冊</router-link>
-            <a href="javascript:;" @click="getApk">去下載註冊得5天VIP</a>
+            <a href="javascript:;" @click="getApk">APK下載</a>
           </n-form-item>
         </n-form>
         <div class="login-other">
@@ -38,7 +38,7 @@
                   </n-icon>
                 </router-link>
               </template>
-              手機登陸
+              手機登入
             </n-tooltip>
             <n-tooltip >
               <template #trigger>
@@ -46,7 +46,7 @@
                   <brand-google></brand-google>
                 </n-icon>
               </template>
-              APP內Google登錄的帳號請先通過忘記密碼設置密碼後登錄
+              APP內Google登入的帳號請先通過忘記密碼設置密碼後登入
             </n-tooltip>
           </n-space>
         </div>
@@ -87,7 +87,7 @@ const loginPost = () => {
         } else {
           window.localStorage.removeItem('pikpakLoginData')
         }
-        message.success('登錄成功')
+        message.success('登入成功')
         router.push('/')
       }
     })
@@ -101,9 +101,9 @@ const showMessage = () => {
   if(remember.value) {
     dialog.warning({
         title: '警告',
-        content: '記住登陸是指瀏覽器本地明文保存使用者名稱密碼用於下次自動登陸，請勿在非信任設備選擇',
+        content: '自動登入是指瀏覽器本地明文保存使用者名稱密碼用於下次自動登入，請勿在非信任設備上選擇',
         positiveText: '確定',
-        negativeText: '不確定',
+        negativeText: '取消',
         onPositiveClick: () => {
         },
         onNegativeClick: () => {
