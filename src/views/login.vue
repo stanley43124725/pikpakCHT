@@ -1,7 +1,7 @@
 ﻿<template>
   <div class="login-page">
     <div class="down">
-      <img src="../assets/phone-pc2.png" >
+      <img src="../assets/banner3.e32c06bc.webp" >
     </div>
     <div class="login"> 
       <div class="logo-box">
