@@ -161,7 +161,7 @@ const getApk = () => {
     font-family: PingFangSC-Semibold;
     font-size: 40PX;
     letter-spacing: -1.25PX;
-    color: #fff;
+    color: #000000;
   }
   .login-page .login-box {
     margin-top: 60px;
