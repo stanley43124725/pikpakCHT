@@ -1090,20 +1090,20 @@ import axios from 'axios';
         key: 'base',
         disabled: row.kind !== 'drive#folder'
       },
-      {
-        label: '分享到資源庫',
-        key: 'share',
-        disabled: !row.hash
-      },
+      // {
+      //   label: '分享到资源库',
+      //   key: 'share',
+      //   disabled: !row.hash
+      // },
       {
         label: '刪除',
         key: 'delete'
       },
-      {
-        label: '直接分享',
-        key: 'sharePikPak',
-        disabled: row.kind === 'drive#folder'
-      },
+      // {
+      //   label: '直接分享',
+      //   key: 'sharePikPak',
+      //   disabled: row.kind === 'drive#folder'
+      // },
     ]
     if(row.kind !== 'drive#folder') {
       if(userMenu.value.length) {
