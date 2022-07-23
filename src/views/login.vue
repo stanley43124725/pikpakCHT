@@ -23,7 +23,7 @@
             <n-button type="primary" class="block" :loading="loading" @click="loginPost">登入</n-button>
           </n-form-item>
           <n-form-item label="">
-            <a target="_blank" href="https://i.mypikpak.com/v1/file/center/account/v1/password/?type=forget_password&locale=zh-cn" class="forget-password">忘記密碼</a>
+            <a target="_blank" href="https://mypikpak.com/drive/forget-password" class="forget-password">忘記密碼</a>
             <router-link to="/register" class="register">註冊</router-link>
             <a href="javascript:;" @click="getApk">APK下載</a>
           </n-form-item>
